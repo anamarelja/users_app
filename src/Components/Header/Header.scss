@@ -1,0 +1,85 @@
+.Header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+
+    &.light {
+        background-color: #5bb1f1;
+    }
+
+    &.dark {
+        background-color: #313131;
+    }
+
+    .wrapper{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .Logo{
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .MuiFormControlLabel-label{
+            font-weight: bold;
+        }
+
+        .switch-button{
+            background-color: transparent;
+            border: none;
+            outline: none;        
+            &:hover{
+                cursor:pointer;         
+            }
+
+            .fa-moon{
+            color: white;
+            border: 1px solid;
+            padding: 5px;
+            border-radius: 50%;
+            }
+
+            .fa-sun{
+            color: #ffc007;
+            border: 1px solid;
+            padding: 5px;
+            border-radius: 50%;
+            }
+        }
+    }
+}
+
+@media all and(max-width: 768px){
+    .Header .wrapper .Logo{
+        font-size: 14px;
+    }
+    .has-text-white{
+        font-size: 14px;
+    }
+
+    .Header .wrapper .switch-button .fa-moon{
+        font-size: 14px !important;
+    }
+    .Header .wrapper .switch-button .fa-sun{
+        font-size: 14px !important;
+    }
+}
+
+@media all and(max-width: 375px){
+    .Header .wrapper .Logo{
+        font-size: 12px;
+    }
+    .has-text-white{
+        font-size: 12px;
+    }
+
+    .Header .wrapper .switch-button .fa-moon{
+        font-size: 12px !important;
+    }
+    .Header .wrapper .switch-button .fa-sun{
+        font-size: 12px !important;
+    }
+}

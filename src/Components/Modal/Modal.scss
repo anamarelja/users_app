@@ -1,0 +1,33 @@
+.modal-dark{
+    background-color: #484848 !important;
+
+    .main-text{
+        color: #232323;
+    }
+
+    .submit-button{
+        background-color: #4f98ce;
+    }
+}
+
+.MuiFormControl-root{
+    width: 80%;
+}
+
+.submit-button{
+    background-color: #5bb1f1;
+    margin-top: 35px;
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+@media all and(max-width: 375px){
+    .modal-view{
+        width: 80% !important;
+    }
+}

@@ -1,0 +1,83 @@
+.Users{
+   align-items: center;
+    .wrapper{
+        width: 80%;
+        margin: auto;
+
+        .all-users{
+            font-weight: 600;
+            font-size: 18px;
+            color: #888888;
+
+            &.dark{
+                color: white;
+            }
+        }
+        
+        .myButton{
+            // border-radius: 25px;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            background-color: #5bb1f1;
+            font-weight: 600;
+
+            &.dark{
+                background-color: #313131;
+            }
+        }
+
+        .table-header{
+            display: flex;
+            border-bottom: 0.3px solid #cccccc;
+            border-top: 0.3px solid #cccccc;
+            color: #bbbbbb;
+            
+            &.dark{
+                color: white;
+            }
+
+            .col{
+                flex: 1;
+            }
+        }
+    }
+}
+
+@media all and(max-width: 768px){
+    .Users .wrapper{
+        font-size: 11px;
+
+        .all-users{
+            font-size: 14px;
+        }
+        .myButton{
+            padding: 5px 10px;
+            font-size: 11px;
+        }
+    }
+}
+
+@media all and(max-width: 375px){
+    .Users .wrapper{
+        font-size: 10px;
+        
+        .table-header{
+            font-size: 9px;
+        }
+
+        .UserRow{
+            font-size: 8px;
+            padding: 8px !important;
+        }
+        .all-users{
+            font-size: 12px;
+        }
+        .myButton{
+            padding: 5px 10px;
+            font-size: 9px;
+        }
+    }
+}
+
