@@ -1,6 +1,15 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Users App written in React.js using MockApi.io (https://60965395116f3f00174b2f00.mockapi.io/users). 
+The app can display all users, edit a specific user or delete it. First page is a login page that saves your email address for any other visits, until you log out. 
+
+## Technologies
+Project is created using:
+- hooks
+- context
+- MaterialUI
+- Bulma
+- Sass
 
 ## Available Scripts
 
