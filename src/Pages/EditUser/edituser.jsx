@@ -16,8 +16,7 @@ const EditUser = (props) => {
   const { login } = useContext(loginContext);
   const [redirect, setRedirect] = useState(false);
   const user = data.find((e) => e.id === props.match.params.id);
-  const [userEmail, setUserEmail] = useState("");
-  const [userName, setUserName] = useState("");
+  const [editUser, setEditUser] = useState({...user})
 
   const submitUser = () => {
     fetch(`https://60965395116f3f00174b2f00.mockapi.io/users/${user.id}`, {
@@ -25,10 +24,9 @@ const EditUser = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        name: userName,
-        email: userEmail,
-      }),
+      body: JSON.stringify(
+          editUser
+      ),
     })
       .then((res) => res.json())
       .then(() => {
@@ -70,7 +68,7 @@ const submitForm = async (event) => {
                 placeholder={user.name}
                 label="New name"
                 className="m-1 edit-inputs"
-                onChange={(e) => setUserName(e.target.value)}
+                onChange={(e) => setEditUser({...editUser, name: e.target.value})}
               />
               <TextField
                 required
@@ -81,8 +79,40 @@ const submitForm = async (event) => {
                 label="New email"
                 className="m-1 edit-inputs"
                 onChange={(e) => {
-                    setUserEmail(e.target.value)
+                    setEditUser({...editUser, email: e.target.value})
                 }}
+              />
+              <TextField
+                required
+                id="standard-required standard-basic"
+                placeholder={user.username}
+                label="New username"
+                className="m-1 edit-inputs"
+                onChange={(e) => setEditUser({...editUser, username: e.target.value})}
+              />
+              <TextField
+                required
+                id="standard-required standard-basic"
+                placeholder={user.phone}
+                label="New phone number"
+                className="m-1 edit-inputs"
+                onChange={(e) => setEditUser({...editUser, phone: e.target.value})}
+              />
+              <TextField
+                required
+                id="standard-required standard-basic"
+                placeholder={user.website}
+                label="New website"
+                className="m-1 edit-inputs"
+                onChange={(e) => setEditUser({...editUser, website: e.target.value})}
+              />
+              <TextField
+                required
+                id="standard-required standard-basic"
+                placeholder={user.company}
+                label="New company name"
+                className="m-1 edit-inputs"
+                onChange={(e) => setEditUser({...editUser, company: e.target.value})}
               />
               <button
                 type="submit"
