@@ -1,5 +1,5 @@
 import "./singleuser.scss";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Header } from "../../Components/Header";
 import { Redirect, Link } from 'react-router-dom'
 import { dataContext } from "../../App";
@@ -8,15 +8,23 @@ import {loginContext} from '../../App'
 import { validContext } from '../../App'
 
 const SingleUser = (props) => {
-  const data = useContext(dataContext);
+  const [user, setUser] = useState([])
+  const userID = props.match.params.id
   const {theme} = useContext(themeContext);
   const {login} = useContext(loginContext)
   const { setValidData} = useContext(validContext)
   const [redirect, setRedirect] = useState(false)
-  const user = data.find((e) => e.id === props.match.params.id);
+  // const user = data.find((e) => e.id === props.match.params.id);
+  // const data = useContext(dataContext);
+
+  useEffect (()=>{
+    fetch(`https://60965395116f3f00174b2f00.mockapi.io/users/${userID}`)
+    .then(res => res.json())
+    .then(data => setUser(data))
+  }, [userID])
 
   const deleteUser = () => {
-    fetch(`https://60965395116f3f00174b2f00.mockapi.io/users/${user.id}`,{
+    fetch(`https://60965395116f3f00174b2f00.mockapi.io/users/${userID}`,{
       method:"DELETE",
       headers: { 
         "Content-Type": "application/json",
